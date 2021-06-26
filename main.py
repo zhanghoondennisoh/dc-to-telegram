@@ -61,9 +61,9 @@ async def run_loop(context):
         print('[INFO] Trying to fetch board messages...')
         index_generator = None
         if max_of_id != 0:
-            index_generator = api.board(context.board_id, start_page=1, num=CONST_NUM_NORMAL_FETCH, document_id_lower_limit=max_of_id)
+            index_generator = api.board(context['board_id'], start_page=1, num=CONST_NUM_NORMAL_FETCH, document_id_lower_limit=max_of_id)
         else:
-            index_generator = api.board(context.board_id, start_page=1, num=CONST_NUM_FIRST_FETCH)
+            index_generator = api.board(context['board_id'], start_page=1, num=CONST_NUM_FIRST_FETCH)
         print('[INFO] Done!')
         message = ''
         cnt = 0
@@ -86,7 +86,7 @@ async def run_loop(context):
 
 async def main():
     context = {}
-    context.board_id = 'smask'
+    context['board_id'] = 'smask'
     await run_loop(context)
 
 
