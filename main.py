@@ -43,7 +43,7 @@ class AsyncTimedIterable:
 
 async def send_telegram_message(context, message):
     #bot_token = '12345:YOUR FULL BOT TOKEN'
-    #bot_chat_id = 'YOUR CHAR ID' #
+    #bot_chat_id = 'YOUR CHAT ID' #
     url = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chat_id + '&parse_mode=Markdown&text=' + message
     response = requests.get(url)
     pprint.pprint(response)
